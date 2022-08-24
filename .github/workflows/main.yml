@@ -1,0 +1,6 @@
+- name: Sync repositories
+  uses: somosprte/sync-repositories@0.0.1-ALPHA
+  # Repository to receive data from you repository
+    distination: https://github.com/cnctrain/Content-development
+    # Your GitHub account username
+    username: 
