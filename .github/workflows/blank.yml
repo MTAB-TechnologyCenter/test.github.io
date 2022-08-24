@@ -6,7 +6,7 @@
     # The remote ref name to use. 'mirror' by default. Useful to avoid conflicts with existing remotes.
     REMOTE_NAME: # optional
     # The remote repository e.g. https://github.com/octocat/foo.git or git@github.com:octocat/foo.git
-    REMOTE: # optional
+    REMOTE: https://github.com/cnctrain/Content-development
     # Username for remote repository
     GIT_USERNAME: # optional
     # The git https password or token for the remote repository
