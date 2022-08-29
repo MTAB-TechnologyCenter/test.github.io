@@ -1,0 +1,15 @@
+name: Issue transfer2
+
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    issue-transfer:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Transfer Issue & Create Stub
+              uses: lando/transfer-issue-action@v2
+              with:
+                token: ts.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
+                router: hm:crm-ops
