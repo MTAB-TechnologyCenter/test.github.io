@@ -1,15 +1,28 @@
-name: Issue transfer2
-
+name: Manual Issue Transer Action Test
 on:
-    issues:
-        types: [opened]
+  issues:
+    types:
+      - labeled
 
 jobs:
-    issue-transfer:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Transfer Issue & Create Stub
-              uses: lando/transfer-issue-action@v2
-              with:
-                token: ts.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
-                router: hm:crm-ops
+  test-action:
+    runs-on: ${{ matrix.os }}
+    env:
+      TERM: xterm
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+        router:
+          - holla-tronic:crm-ops
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Manual Action Test
+        id: test_action
+        uses: ./
+        with:
+          token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
+          router: ${{ matrix.router }}
+          apply_label: MANUAL ACTION TEST
+          debug: true
